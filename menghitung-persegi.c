@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Muhammad Naufal Shidqi (), nopal.sidqi@gmail.com
+ *         Author:  Muhammad Naufal Shidqi (), mhmmdnflshdq@gmail.com
  *   Organization:  
  *
  * =====================================================================================
