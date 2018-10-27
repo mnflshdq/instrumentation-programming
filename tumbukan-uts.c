@@ -92,7 +92,7 @@ int main ()
         if(o == 2)
         {
             printf("\n");
-            printf("Masukkan nilai koefisen restitusi (e): ");
+            printf("Masukkan nilai koefisen restitusi (0<e<1): ");
             fgets(line, sizeof(line), stdin);
             sscanf(line, "%f", &e);
 
