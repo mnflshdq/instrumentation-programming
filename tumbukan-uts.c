@@ -19,20 +19,8 @@
 #include <stdio.h>
 char line[100];
 
-/* Fungsi untuk menghitung V1akhir dan V2akhir pada lenting sempurna */
-void lenting_sempurna(float m1, float m2, float V1awal, float V2awal)
-{
-    float V1akhir, V2akhir;
-    V2akhir = (m1 * (2 * V1awal - V2awal) + m2 * V2awal) / (m1 + m2);
-    V1akhir = V2awal - V1awal + V2akhir;
-
-    printf("Arah dan kecepatan benda pertama setelah tumbukan adalah %.3f m/s\n", V1akhir);
-    printf("Arah dan kecepatan benda kedua setelah tumbukan adalah %.3f m/s\n", V2akhir);
-    return;
-}
-
 /* Fungsi untuk menghitung lenting sebagian */
-void lenting_sebagian(float e, float m1, float m2, float V1awal, float V2awal)
+void tumbukan(float e, float m1, float m2, float V1awal, float V2awal)
 {
     float V2akhir, V1akhir;
     V2akhir = (m1 * (V1awal - e * (V2awal - V1awal)) + m2 * V2awal) / (m1 + m2);
@@ -40,16 +28,6 @@ void lenting_sebagian(float e, float m1, float m2, float V1awal, float V2awal)
     
     printf("Arah dan kecepatan benda pertama setelah tumbukan adalah %.3f m/s\n", V1akhir);
     printf("Arah dan kecepatan benda kedua setelah tumbukan adalah %.3f m/s\n", V2akhir);
-    return;
-}
-
-/* Fungsi untuk menghitung tidak lenting sama sekali */
-void tidak_lenting(float m1, float m2, float V1awal, float V2awal)
-{
-    float Vakhir;
-    Vakhir = (m1 * V1awal + m2 * V2awal) / (m1 + m2);
-
-    printf("Arah dan kecepatan benda pertama dan kedua setelah tumbukan adalah %.2f\n", Vakhir);
     return;
 }
 
@@ -86,7 +64,7 @@ int main ()
         if(o == 1)
         {
             printf("\n");
-            lenting_sempurna(m1, m2, V1awal, V2awal);
+            tumbukan(1, m1, m2, V1awal, V2awal);
             printf("\n");
         }
         if(o == 2)
@@ -97,13 +75,13 @@ int main ()
             sscanf(line, "%f", &e);
 
             printf("\n");
-            lenting_sebagian(e, m1, m2, V1awal, V2awal);
+            tumbukan(e, m1, m2, V1awal, V2awal);
             printf("\n");
         }
         if(o == 3)
         {
             printf("\n");
-            tidak_lenting(m1, m2, V1awal, V2awal);
+            tumbukan(0, m1, m2, V1awal, V2awal);
             printf("\n");
         }
 
