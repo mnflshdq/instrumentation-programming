@@ -19,7 +19,7 @@
 #include <stdio.h>
 char line[100];
 
-/* Fungsi untuk menghitung lenting sebagian */
+/* Fungsi untuk menghitung tumbukan */
 void tumbukan(float e, float m1, float m2, float V1awal, float V2awal)
 {
     float V2akhir, V1akhir;
