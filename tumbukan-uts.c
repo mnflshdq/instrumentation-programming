@@ -84,6 +84,10 @@ int main ()
             tumbukan(0, m1, m2, V1awal, V2awal);
             printf("\n");
         }
+        else
+        {
+            printf("Tumbukan tidak tersedia\n");
+        }
 
         printf("Apakah anda ingin mengulang program? (y/n)\n");
         fgets(line, sizeof(line), stdin);
